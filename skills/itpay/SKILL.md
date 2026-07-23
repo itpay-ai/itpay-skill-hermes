@@ -118,4 +118,13 @@ itpay docs show <topic> --json
 itpay skill show itpay --json
 ```
 
-The bundle includes normative CLI documents under `assets/itpay-cli/docs/agent/buyer/`.
+The Hub-installed package includes these normative CLI documents:
+
+- `assets/itpay-cli/docs/agent/buyer/cart-checkout.json`
+- `assets/itpay-cli/docs/agent/buyer/catalog-list.json`
+- `assets/itpay-cli/docs/agent/buyer/identity-and-sessions.json`
+- `assets/itpay-cli/docs/agent/buyer/install-and-setup.json`
+- `assets/itpay-cli/docs/agent/buyer/orders-refunds.json`
+- `assets/itpay-cli/docs/agent/buyer/payment-flow.json`
+- `assets/itpay-cli/docs/agent/buyer/quickstart.json`
+- `assets/itpay-cli/docs/agent/buyer/render-hosts.json`

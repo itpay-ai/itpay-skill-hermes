@@ -7,15 +7,15 @@ Hermes Skills Hub package with a pinned, offline single-file `@itpay/cli` bundle
 Install this public GitHub Skill directly:
 
 ```bash
-hermes skills inspect itpay-ai/itpay-skill-hermes/skills/itpay
-hermes skills install itpay-ai/itpay-skill-hermes/skills/itpay
+hermes skills inspect https://raw.githubusercontent.com/itpay-ai/itpay-skill-hermes/main/skills/itpay/SKILL.md
+hermes skills install https://raw.githubusercontent.com/itpay-ai/itpay-skill-hermes/main/skills/itpay/SKILL.md
 ```
 
 Or subscribe to the ItPay repository as a tap:
 
 ```bash
 hermes skills tap add itpay-ai/itpay-skill-hermes
-hermes skills install itpay-ai/itpay-skill-hermes/itpay
+hermes skills install itpay-ai/itpay-skill-hermes/skills/itpay
 ```
 
 Then start a fresh Hermes session and run:

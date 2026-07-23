@@ -63,6 +63,20 @@ test("Skill is Hermes-specific and references only Hub-supported bundle director
   assert.equal(existsSync(join(skillRoot, "vendor")), false);
 });
 
+test("Skill explicitly references every runtime file Hermes Skills Hub must download", () => {
+  const runtimeFiles = [
+    "scripts/itpay.mjs",
+    "assets/itpay-cli/itpay-cli.bundle.mjs",
+    ...readdirSync(join(skillRoot, "assets/itpay-cli/docs/agent/buyer"))
+      .filter((name) => name.endsWith(".json"))
+      .map((name) => `assets/itpay-cli/docs/agent/buyer/${name}`),
+  ];
+
+  for (const path of runtimeFiles) {
+    assert.match(skill, new RegExp(path.replaceAll(".", "\\.")), `SKILL.md must reference ${path}`);
+  }
+});
+
 function filesBelow(root) {
   return readdirSync(root, { recursive: true, withFileTypes: true })
     .filter((entry) => entry.isFile())
