@@ -1,0 +1,9 @@
+{
+  "name": "itpay-skill-hermes",
+  "version": "2.0.15",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
