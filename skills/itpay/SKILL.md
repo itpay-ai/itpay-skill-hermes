@@ -118,7 +118,7 @@ itpay docs show <topic> --json
 itpay skill show itpay --json
 ```
 
-The Hub-installed package includes these normative CLI documents:
+The Hub-installed package includes the launcher `scripts/itpay.mjs` and these normative CLI documents:
 
 - `assets/itpay-cli/docs/agent/buyer/cart-checkout.json`
 - `assets/itpay-cli/docs/agent/buyer/catalog-list.json`

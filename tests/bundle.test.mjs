@@ -73,7 +73,7 @@ test("Skill explicitly references every runtime file Hermes Skills Hub must down
   ];
 
   for (const path of runtimeFiles) {
-    assert.match(skill, new RegExp(path.replaceAll(".", "\\.")), `SKILL.md must reference ${path}`);
+    assert.match(skill, new RegExp(`\`${path.replaceAll(".", "\\.")}\``), `SKILL.md must directly reference ${path}`);
   }
 });
 
