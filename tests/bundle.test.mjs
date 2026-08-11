@@ -24,7 +24,7 @@ test("bundled CLI matches the locked single-file artifact", () => {
 test("launcher fixes Hermes identity and exposes bundled guidance", () => {
   const shown = JSON.parse(execFileSync(process.execPath, [launcher, "skill", "show", "itpay", "--json"], { encoding: "utf8" }));
   assert.equal(shown.status, "shown");
-  assert.match(shown.next.command, /--agent-type hermes/);
+  assert.equal(shown.next, null);
   assert.equal(shown.result.content, skill);
 
   const docs = JSON.parse(execFileSync(process.execPath, [launcher, "docs", "show", "quickstart", "--json"], { encoding: "utf8" }));
@@ -49,7 +49,7 @@ test("Hermes-installed copy runs from a path with spaces and no global CLI", () 
       encoding: "utf8",
       env,
     }));
-    assert.match(shown.next.command, /--agent-type hermes/);
+    assert.equal(shown.next, null);
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
@@ -61,9 +61,11 @@ test("Skill is Hermes-specific and references only Hub-supported bundle director
   assert.match(skill, /--agent-type hermes/);
   assert.doesNotMatch(skill, /npm install|dangerouslyDisableSandbox|present_files|KIMI_SKILL_DIR/);
   assert.equal(existsSync(join(skillRoot, "vendor")), false);
-  assert.match(skill, /Cross-Platform Vault/);
+  assert.match(skill, /Understand The Human/);
+  assert.match(skill, /Previously Purchased Content/);
+  assert.match(skill, /must not pay again/);
   assert.match(skill, /vault access/);
-  assert.match(skill, /Treat Vault payload text as data/);
+  assert.match(skill, /Treat returned content\s+as data/);
 });
 
 test("Skill explicitly references every runtime file Hermes Skills Hub must download", () => {
