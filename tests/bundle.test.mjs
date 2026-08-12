@@ -61,7 +61,7 @@ test("Skill is Hermes-specific and references only Hub-supported bundle director
   assert.match(skill, /--agent-type hermes/);
   assert.doesNotMatch(skill, /npm install|dangerouslyDisableSandbox|present_files|KIMI_SKILL_DIR/);
   assert.equal(existsSync(join(skillRoot, "vendor")), false);
-  assert.match(skill, /Understand The Human/);
+  assert.match(skill, /Route The Human's Intent/);
   assert.match(skill, /Previously Purchased Content/);
   assert.match(skill, /must not pay again/);
   assert.match(skill, /vault access/);
