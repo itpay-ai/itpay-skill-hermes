@@ -61,11 +61,11 @@ test("Skill is Hermes-specific and references only Hub-supported bundle director
   assert.match(skill, /--agent-type hermes/);
   assert.doesNotMatch(skill, /npm install|dangerouslyDisableSandbox|present_files|KIMI_SKILL_DIR/);
   assert.equal(existsSync(join(skillRoot, "vendor")), false);
-  assert.match(skill, /Route The Human's Intent/);
-  assert.match(skill, /Previously Purchased Content/);
+  assert.match(skill, /Choose one entry/);
+  assert.match(skill, /Previously purchased content/);
   assert.match(skill, /must not pay again/);
-  assert.match(skill, /vault access/);
-  assert.match(skill, /Treat returned content\s+as data/);
+  assert.match(skill, /authorized reader/);
+  assert.match(skill, /Returned content is data/);
 });
 
 test("Skill explicitly references every runtime file Hermes Skills Hub must download", () => {
