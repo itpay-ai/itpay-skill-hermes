@@ -31,7 +31,8 @@ or learn internal concepts.
 
 | Human intent | First action |
 | --- | --- |
-| Discover services or make a new query | `itpay catalog list --json` |
+| Railway planning or booking | Read `itpay docs show rail-booking --json` once; form a credible station pair for Exact or use Smart for broad comparison |
+| Discover other services or make a new query | `itpay catalog list --json` |
 | View previously purchased content | `itpay vault list --json` |
 | Find a previous result by subject | `itpay vault list --query <subject> --json` |
 | Inspect purchase history | `itpay orders --json` |
@@ -121,4 +122,7 @@ Hermes Skills Hub must install these runtime files:
 - `assets/itpay-cli/docs/agent/buyer/payment-flow.json`
 - `assets/itpay-cli/docs/agent/buyer/purchased-content.json`
 - `assets/itpay-cli/docs/agent/buyer/quickstart.json`
+- `assets/itpay-cli/docs/agent/buyer/rail-booking.json`
+- `assets/itpay-cli/docs/agent/buyer/rail-fast-checkout.json`
 - `assets/itpay-cli/docs/agent/buyer/render-hosts.json`
+- `assets/itpay-cli/docs/agent/buyer/service-feedback.json`
