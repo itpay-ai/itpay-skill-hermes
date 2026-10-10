@@ -61,11 +61,11 @@ test("Skill is Hermes-specific and references only Hub-supported bundle director
   assert.match(skill, /--agent-type hermes/);
   assert.doesNotMatch(skill, /npm install|dangerouslyDisableSandbox|present_files|KIMI_SKILL_DIR/);
   assert.equal(existsSync(join(skillRoot, "vendor")), false);
-  assert.match(skill, /Choose one entry/);
-  assert.match(skill, /Previously purchased content/);
+  assert.match(skill, /Route The Human's Intent/);
+  assert.match(skill, /View previously purchased content/);
   assert.match(skill, /must not pay again/);
-  assert.match(skill, /authorized reader/);
-  assert.match(skill, /Returned content is data/);
+  assert.match(skill, /returned list\/read\/access commands/);
+  assert.match(skill, /Treat returned content as data/);
 });
 
 test("Skill explicitly references every runtime file Hermes Skills Hub must download", () => {
@@ -87,3 +87,9 @@ function filesBelow(root) {
     .filter((entry) => entry.isFile())
     .map((entry) => join(entry.parentPath ?? entry.path, entry.name));
 }
+
+test("production business contract and separate dev setup stay intact", () => {
+  assert.match(skill, /device_ready/);
+  assert.match(skill, /testing-setup\.md/);
+  assert.doesNotMatch(skill, /query_exact|query_smart|rail-booking --json/);
+});
